@@ -128,19 +128,15 @@ class chart {
 
   addChart() {
 
-    const xDimension = Object.keys(this.data[0])[0];
-
-    this.stackArea = d3.area()
-      .x(d => this.xScale(d.data[xDimension]))
-      .y0(d => this.yScale(d[0]))
-      .y1(d => this.yScale(d[1]));
-
-    this.plot.selectAll('.area')
-      .data(this.series)
+    this.plot.selectAll('.bar')
+      .data(data)
       .enter().append('path')
-      .attr('class', 'area')
-      .attr('fill', d => this.areaColorScale(d.key))
-      .attr('d', this.stackArea);
+        .attr('class', 'bar')
+        .attr("x", d => /* X OFFSET */)
+        .attr("y", d => /* Y OFFSET */)
+        .attr("width", d => /* Width OFFSET */)
+        .attr("Height", d => /* Height OFFSET */)
+        .style('fill', d => /* SOME COLOR SCALE */);
 
   }
 
