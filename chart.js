@@ -78,13 +78,7 @@ class chart {
       .domain(yExtent);
 
     // Maybe you would like to create a customer color scale?
-    this.areaColorScale = d3.scaleOrdinal([
-      '#D3D5D9',
-      '#CBDB97',
-      '#FEBFC5',
-      '#BFDFDE',
-      '#FBE7B6'
-    ]);
+    this.areaColorScale = d3.scaleOrdinal([]);
 
   }
 
@@ -128,15 +122,14 @@ class chart {
 
   addChart() {
 
-    this.plot.selectAll('.bar')
+    this.plot.selectAll(/* .shapeClass */)
       .data(data)
-      .enter().append('path')
-        .attr('class', 'bar')
-        .attr("x", d => /* X OFFSET */)
-        .attr("y", d => /* Y OFFSET */)
-        .attr("width", d => /* Width OFFSET */)
-        .attr("Height", d => /* Height OFFSET */)
-        .style('fill', d => /* SOME COLOR SCALE */);
+      .enter().append(/* .shape */)
+        .attr('class', /* .shapeClass */)
+        // SVG attributes
+        // .attr()
+        // SVG styles
+        // .style()
 
   }
 
