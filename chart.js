@@ -1,7 +1,5 @@
 d3.csv('data.csv').then(data => {
 
-  // Here we'll structure our data
-
   createChart(data);
 
 });
@@ -51,30 +49,27 @@ class Chart {
     // Each of these methods have an important role to play
     this.createScales();
     this.addAxes();
+    this.addTitles();
     this.addChart();
 
   }
 
   createScales() {
-    // Shorthand to save typing
-    const m = this.margin;
-
     // The scales we need will depend on our chart.
 
   }
 
   addAxes() {
-
-    const m = this.margin;
-
     // The axises we need will depend on our chart.
 
   }
 
+  addTitles() {
+    // This functions moves all our axis around
+    
+  }
+
   addChart() {
-
-    const m = this.margin;
-
     // Now we get to finally see those lovely SVGs
 
   }
