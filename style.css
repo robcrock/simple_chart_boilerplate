@@ -1,0 +1,12 @@
+/* General */
+text {
+  font-family: roboto;
+}
+
+/* Titles */
+.chart.subtitle {
+  font-size: 16px;
+}
+.chart.title {
+  font-size: 32px;
+}

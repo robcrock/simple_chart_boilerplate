@@ -1,6 +1,5 @@
 d3.csv('data.csv').then(data => {
-
-  // Here we'll structure our data
+  // Transform your data
 
   createChart(data);
 
@@ -28,14 +27,12 @@ class Chart {
 
   draw() {
 
-    // Define a space to place everything you would want. This
-    // includes titles, axises, axis labels, and the chart.
+    // Create the parent SVG
     this.width = 960;
     this.height = 500;
     this.margin = { top: 75, right: 15, bottom: 50, left: 50 };
 
-    // The inner height and width relate the space your chart will
-    // occupy excluding space for tiles and axises.
+    // Give your title and axes some space
     this.innerHeight = this.height - (this.margin.top + this.margin.bottom);
     this.innerWidth = this.width - (this.margin.right + this.margin.left);
 
@@ -48,35 +45,54 @@ class Chart {
     this.plot = svg.append('g')
       .attr('transform', `translate(${this.margin.left},${this.margin.top})`);
 
-    // Each of these methods have an important role to play
+    // Call the necessary functions
     this.createScales();
     this.addAxes();
+    this.addTitles()
     this.addChart();
-
   }
 
   createScales() {
-    // Shorthand to save typing
-    const m = this.margin;
+    // These map our data to positions on the screen
+    // https://github.com/d3/d3-scale
 
-    // The scales we need will depend on our chart.
+    // this.xScale = d3.someScale()
+    //   .domain([])
+    //   .range([]);
 
+    // this.yScale = d3.someScale()
+    //   .range([])
+    //   .domain([]);
   }
 
   addAxes() {
+    // Axes aren't necessary for every chart type, but
+    // you know where to add your code if you need them.
 
-    const m = this.margin;
+  }
+  
+  addTitles() {
+    // Add chart title
+    this.plot.append('text')
+      .attr("class", "chart title")
+      .attr('x', 0)
+      .attr('y', -30)
+      .text("Main point or question to ponder");
 
-    // The axises we need will depend on our chart.
+    // Add chart subtitle
+    this.plot.append('text')
+      .attr("class", "chart subtitle")
+      .attr('x', 0)
+      .attr('y', -5)
+      .text("Supportive information to aid graphicacy");
 
+    // Add x-axis title
+
+    // Add y-axis title
   }
 
   addChart() {
-
-    const m = this.margin;
-
-    // Now we get to finally see those lovely SVGs
-
+    // Now it is time to see those lovely SVGs <3
   }
 
 }
